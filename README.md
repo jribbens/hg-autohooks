@@ -45,6 +45,7 @@ To require that your Python module can be successfully imported
 before allowing it to be committed, create a file named
 `hg-autohooks/pre_commit.import.py` containing:
 
+```python
     """Mercurial pre-commit hook to try importing the project."""
     # pylint: disable=invalid-name,unused-argument
 
@@ -62,3 +63,4 @@ before allowing it to be committed, create a file named
 		ui.write(stderr)
 	    return True
 	return False
+```
