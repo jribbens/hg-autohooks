@@ -52,15 +52,15 @@ before allowing it to be committed, create a file named
     import subprocess
 
     def pre_commit(ui, repo, **kwargs):
-	"""Try importing the project and see if anything bad happens."""
-	imp = subprocess.Popen(("bin/python", "-c", "import foo"),
-	    cwd=repo.root, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-	stdout, stderr = imp.communicate()
-	if imp.returncode or stdout or stderr:
-	    if stdout:
-		ui.write(stdout)
-	    if stderr:
-		ui.write(stderr)
-	    return True
-	return False
+        """Try importing the project and see if anything bad happens."""
+        imp = subprocess.Popen(("bin/python", "-c", "import foo"),
+            cwd=repo.root, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        stdout, stderr = imp.communicate()
+        if imp.returncode or stdout or stderr:
+            if stdout:
+                ui.write(stdout)
+            if stderr:
+                ui.write(stderr)
+            return True
+        return False
 ```
