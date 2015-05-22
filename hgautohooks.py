@@ -9,7 +9,7 @@ from mercurial.i18n import _
 
 
 testedwith = "3.1.2"
-buglink = ""
+buglink = "https://github.com/jribbens/hg-autohooks/issues"
 
 
 PREPOST_HOOKS = (
